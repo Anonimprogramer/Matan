@@ -48,15 +48,12 @@ class Martica(object):
                         else:
                             smaller[j][q] = minor[j+1][q]
                 e = e + minor[0][i]*self.determination(smaller) * pow(-1, i-1)
-                print(smaller)
-                print(e)
             return e
 
 
 moy = Martica()
 ybivca =moy.determination(moy.basic)
-print(ybivca)
-
+print("Вот он определитель", ybivca)
 
 
 
