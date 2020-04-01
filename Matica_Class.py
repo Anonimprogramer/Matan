@@ -135,19 +135,27 @@ class Martica(object):
         return self.transformer
 
 
-
-my = Martica()
-rank = my.rank_on_rank()
-print(rank)
-r = 0
-for i in rank:
-    r = r+1
-    first = 0
-    second = 0
-    for j in i:
-        if j !=0 and first == 0:
-            first = j
-        elif j != 0 and first != 0:
-            second = j
-    print(r,'-й корень уравнения равен',int(second/first))
+print("Вас привествует мистер Пудж. Могу сотворить пару колднуств.Колдунство номер 1 - определитель")
+print("Колдунство номер 2 - это определитель матрицы")
+print("Колднуство номер 3 - это решение СЛАУ(но пока что только определённых)")
+print("Введите номер колдунства")
+i = int(input())
+matrix = Martica()
+if i == 1:
+    print(matrix.determination)
+elif i == 2:
+    print(matrix.trans)
+elif i == 3:
+    q = matrix.rank_on_rank()
+    r = 0
+    for t in q:
+        r = r + 1
+        first = 0
+        second = 0
+        for j in t:
+            if j != 0 and first == 0:
+                first = j
+            elif j != 0 and first != 0:
+                second = j
+        print(r, '-й корень уравнения равен', int(second / first))
 
